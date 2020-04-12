@@ -21,6 +21,7 @@ DELAY	500
 
 REM Create newfile using sublime text
 STRING	subl newfile
+ENTER
 DELAY	500
 
 REM Print hello

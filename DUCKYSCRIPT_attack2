@@ -4,7 +4,7 @@ REM Demonstration: https://www.youtube.com/watch?v=QDZaVGaqA_8
 
 REM	Open spotlight search
 DELAY	1000
-GUI		SPACE
+GUI	SPACE
 DELAY	1000
 
 REM Open terminal from spotlight search
