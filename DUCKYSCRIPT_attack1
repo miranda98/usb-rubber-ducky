@@ -1,0 +1,27 @@
+REM Simple first experiment with DuckyScript
+REM Opening terminal, navigate into Desktop directory, create a newfile, print hello
+
+REM Demonstration: https://www.youtube.com/watch?v=jRlGB14b--E
+
+REM	Open spotlight search
+DELAY	1000
+GUI		SPACE
+DELAY	1000
+
+REM Open terminal from spotlight search
+STRING  terminal
+ENTER
+DELAY   500
+
+REM Navigate into Desktop directory
+STRING 	cd Desktop
+DELAY	500
+ENTER
+DELAY	500
+
+REM Create newfile using sublime text
+STRING	subl newfile
+DELAY	500
+
+REM Print hello
+STRING	hello

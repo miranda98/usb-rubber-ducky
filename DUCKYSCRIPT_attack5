@@ -1,0 +1,21 @@
+REM Copy target directory onto another USB storage device
+
+REM Demonstration https://www.youtube.com/watch?v=vtBKaiNLz0g
+
+REM Open spotlight search
+DELAY   1000
+GUI     SPACE
+DELAY   1000
+
+REM Open terminal from spotlight search
+STRING  terminal
+ENTER
+DELAY   500
+
+REM Copy target directory (called Important-Files here) onto another USB storage device and eject USB
+STRING  cp -a Important-Files /Volumes/'[USB-NAME]'/ && diskutil unmountDisk /Volumes/'[USB-NAME]' && exit
+ENTER
+DELAY   30000
+
+REM Quit terminal
+GUI     q

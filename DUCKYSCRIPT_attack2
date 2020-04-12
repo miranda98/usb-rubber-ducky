@@ -1,0 +1,19 @@
+REM Open website from terminal
+
+REM Demonstration: https://www.youtube.com/watch?v=QDZaVGaqA_8
+
+REM	Open spotlight search
+DELAY	1000
+GUI		SPACE
+DELAY	1000
+
+REM Open terminal from spotlight search
+STRING  terminal
+ENTER
+DELAY   500
+
+REM Open website
+STRING	open https://www.youtube.com/watch?v=ew_oKrjAq5s
+DELAY	500
+ENTER
+

